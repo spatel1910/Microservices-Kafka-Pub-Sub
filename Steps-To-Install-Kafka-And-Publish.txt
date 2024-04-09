@@ -1,0 +1,28 @@
+Setup for Kafka
+when you download Kakfa zip file, Zookeeper comes for free along with Kafka Server.
+
+We will be setting up Kafka for Windows-
+
+These are the commands for windows
+
+Go to inside Kafka parent folder
+1-Start Zookeeper
+bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+2-Start Kafka Server
+bin\windows\kafka-server-start.bat config\server.properties
+
+3-Create a Topic on Kafka server running on 9092
+bin\windows\kafka-topics.bat --create --topic employee --bootstrap-server localhost:9092
+
+4-Produce a message on the created topic using console 
+bin\windows\kafka-console-producer.bat --topic employee --bootstrap-server localhost:9092
+
+5-Read these published messages 
+bin\windows\kafka-console-consumer.bat --topic employee --from-beginning --bootstrap-server localhost:9092
+---
+You can perform step 4 and 5 on split screen, and bring these 2 terminal together and see the magic
+
+
+YouTube Ref-https://www.youtube.com/watch?v=ei6fK9StzMM&t=3743s
+by Durgesh
